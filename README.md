@@ -1,0 +1,2 @@
+# garnol.github.io
+blog
