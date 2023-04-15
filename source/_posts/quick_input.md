@@ -2,7 +2,7 @@
 title: 「OI」读入优化
 description: “一些在算法竞赛中可用的读入优化技巧”
 date: 2021-06-03 16:13:00
-categories:；
+categories:
  - 笔记
 tags:
  - 算法竞赛
