@@ -9,11 +9,11 @@ description: ''
 keywords:
 author: Garnol
 language: zh-CN
-timezone: ''
+timezone: 'Asia/Shanghai'
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
-url: http://garnol.github.io
+url: https://garnol.github.io
 permalink: :year/:month/:day/:title/
 permalink_defaults:
 pretty_urls:
@@ -101,7 +101,7 @@ theme: next
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
-#deploy:
-#  type: git     # Use Github Action: https://hexo.io/docs/github-pages.html
-#  repo: https://github.com/Garnol/garnol.github.io
-#  branch: master
+deploy:
+  type: git     # Use Github Action: https://hexo.io/docs/github-pages.html
+  repo: https://github.com/Garnol/garnol.github.io
+  branch: gh-pages

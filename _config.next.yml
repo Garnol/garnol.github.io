@@ -1,3 +1,10 @@
+# Allow to cache content generation.
+cache:
+  enable: true
+
+# Remove unnecessary files after hexo generate.
+minify: true
+
 # ---------------------------------------------------------------
 # Scheme Settings
 # ---------------------------------------------------------------
