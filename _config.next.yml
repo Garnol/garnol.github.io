@@ -5,13 +5,34 @@ cache:
 # Remove unnecessary files after hexo generate.
 minify: true
 
+
 # ---------------------------------------------------------------
 # Scheme Settings
 # ---------------------------------------------------------------
 
+
 scheme: Gemini
 
 
+# ---------------------------------------------------------------
+# Menu Settings
+# ---------------------------------------------------------------
+
+# Usage: `Key: /link/ || icon`
+# Key is the name of menu item. If the translation for this item is available, the translated text will be loaded, otherwise the Key name will be used. Key is case-sensitive.
+# Value before `||` delimiter is the target link, value after `||` delimiter is the name of Font Awesome icon.
+# External url should start with http:// or https://
+menu:
+  home: /
+  品鉴: /taste
+    
+
+# Enable / Disable menu icons / item badges.
+menu_settings:
+  icons: true
+  badges: false
+  
+  
 # ---------------------------------------------------------------
 # Sidebar Settings
 # See: https://theme-next.js.org/docs/theme-settings/sidebar
