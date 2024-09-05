@@ -63,3 +63,24 @@ tags:
 现在想增加一个Task目录，将这些TODO转变为二级标题放进Task里。
 
 可以使用`org-refile命令`
+
+# 习惯与org-agenda
+
+可以用org-mode记录习惯。
+
+参考官方文档的`8.3.2`节，可以为TODO添加不断重复的DEADLINE，这样就能作为习惯记录使用，例子如下：
+
+```
+* TODO 每日重复的习惯
+DEADLINE: <2024-09-06 Fri +1d>
+```
+
+这时就需要`org-agenda`来组织各种TODO形成日程安排。`org-agenda`可以收集各个org文件中的项目，将其组织在一起进行管理。
+
+使用`org-agenda`之前，需要将要管理的org文件添加到`agenda files`中。可以参考官方文档的`11.1`节，将单个文件加入；也可以在配置文件中指定默认查找的路径：
+
+```
+(setq org-directory "~/org/")
+```
+
+然后参考官方文档的`11.3.1`节，打开Weekly/Daily agenda，即可实现日程安排。
