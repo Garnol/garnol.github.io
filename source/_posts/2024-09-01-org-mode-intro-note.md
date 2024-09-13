@@ -12,6 +12,8 @@ tags:
 
 理想情况下将在日后持续更新。
 
+实际上，大多数问题都可以通过Org-Mode的文档解决，只是个人目前没有时间精力通读文档，因而也只能用到在翻，必然会有些缺漏之处。
+
 需要注意的是，我使用的是doomemacs，其快捷键、配置方式与传统Emacs有很大不同。
 
 <!-- more -->
@@ -34,6 +36,26 @@ tags:
 ## 学习资源
 
 仔细查阅[Org-Mode的官网](https://orgmode.org/)就能找到大量的学习资源，包括官方的文档、教程、以及[Worg](https://orgmode.org/worg/)等。
+
+# 不要滥用TODO
+
+虽然是后加的，但是应该放第一个。
+
+起因是我希望能够将“每天在某个时间段学习”这样的任务放进TODO list里。然而在`SCHEDULE`上如何设置多个时间段方面犯了难。这时候刚好看到文档8.3节提到：
+
+> **Important**: Scheduling an item in Org mode should not be understood in the same way that we understand scheduling a meeting. Setting a date for a meeting is just a simple appointment, you should mark this entry with a simple plain timestamp, to get this item shown on the date where it applies. This is a frequent misunderstanding by Org users. In Org mode, scheduling means setting a date when you want to start working on an action item.
+
+即，配合`SCHEDULE`的TODO适合用于“在特定时间直接进行具体行动”的任务，而对于我所需求的“在某个时间段学习”这样的任务，完全可以不作为TODO，而是普通的条目直接加个时间戳就行：
+
+```
+* 学习
+<2024-09-14 Sat 08:00-12:00 +1d>
+<2024-09-14 Sat 14:00-18:00 +1d>
+```
+
+比如这样。`org-agenda`中也会记录这样的安排。
+
+这也许是因为从GTD作为切入点学习Org-mode，导致下意识地把各种任务都想作为TODO处理，有些思维定势了。
 
 # 最基本的TODO list
 
