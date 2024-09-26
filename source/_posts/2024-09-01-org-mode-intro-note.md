@@ -1,5 +1,5 @@
 ---
-title: Org-Mode个人入门学习笔记
+title: Org-Mode与GTD个人入门学习笔记
 date: 2024-09-01 10:44:40
 categories:
  - 笔记
@@ -107,3 +107,103 @@ tags:
 ```
 
 然后参考官方文档的`11.3.1`节，打开Weekly/Daily agenda，即可实现日程安排。
+
+# TODO组织与GTD
+
+当积攒了不少TODO后，一个重要的问题是，如何组织这些待办事项，以更好地管理与执行。这就需要一些GTD的思想了。
+
+请注意：以下只是个人的理解。归根到底，这方面没有最优，只有最适合。
+
+本质上来说，可以把GTD看作一种对待办事项的分类方法。其基本流程为：
+
+> __Capture__ anything that crosses your mind, nothing is too big or small.
+> __Clarify__ what you’ve captured into clear and concrete action steps.
+> __Organize__ and put everything into the right place.
+> __Review__, update, and revise your lists.
+> __Engage__ Get to work on the important stuff.
+
+## 个人的工作流
+
+### Inbox
+
+将日常生活中，遇到的要做的事、想做的事、乃至片段的灵感等等，都放进一个Inbox的列表中，以供后续整理。
+
+### 分类
+
+将事务分为`Reference`, `Action`, `Calendar`, `Habit`, `Someday`几类。通过以下问题进行分类：
+
+#### 该事务是可执行的吗？
+
+如果不是，放入`Reference`。
+
+例如，“《空之境界：矛盾螺旋》的演出手法很有意思”就可以算作`Reference`；而“看《空之境界：矛盾螺旋》”则是可执行的事务。
+
+#### 可以直接去做吗？
+
+如果认为事务不能直接去做，需要一些前置条件等，则将其放入`Someday`；否则放入`Action`。
+
+例如，在写到此处时，我想玩《异星工厂》，但是想等一两个月后其DLC发售再开始玩，那么我就可以将“玩《异星工厂》”放入`Someday`。
+
+#### 有时间要求吗？
+
+对于需要在特定时间执行的事务，将其放入`Calendar`；对于习惯类、需要反复执行的事务，将其放入`Habit`
+
+#### “下一步”是什么？
+
+对于`Action`中的项目，为了完成这件事，所需要、可以直接着手去做的、不会花费过多的时间精力的“下一步”是什么？
+
+如果“下一步”可以直接完成这件事，将其标为TODO；否则，将事务标为PROJ，在其子项目中加入“下一步”作为TODO。
+
+例如：
+
+```
+* Action
+** TODO 在博客中添加GTD相关的内容 :Writing:
+** PROJ 通关《黑神话：悟空》:Game:
+*** TODO 玩《黑神话：悟空》，打败虎先锋
+```
+
+需要注意的是，对“下一步”的定义是灵活的。如果感到“读完一本书”作为下一步耗费时间太多，可以考虑将其作为项目，拆解为“读一章”、“读一页”等等。
+
+对于`Action`中的项目，可以再根据其所需的环境、精力、必要工具等客观条件进行分类。我使用Org-Mode的tag，为各项TODO加上`Work`, `Novel`, `Game`, `Writing`等标签，大致区分执行所需的时间与精力，以方便在执行时进行挑选。
+
+### 整理
+
+每隔一定时间，比如每天一次，对各个类别的事务进行整理：
+
+- `Inbox`：按照上述方法分类。
+- `Reference`：看看是否有引起兴趣，可以转化为行动的。
+- `Action`：清除已完成事务。对于多步的项目，如果缺少“下一步”，为其补上。
+- `Someday`：看看是否可以着手去做了。
+
+### 执行
+
+最重要的一步。将待办事项组织整理就是为了更方便地去执行。时常打开agenda去做吧。
+
+## 配置
+
+在实际执行时，需要用agenda更好地组织展示各项TODO。需求为：
+
+1. 能够展示当天的日程。
+2. 展示所有TODO，排除习惯与PROJ项目。
+3. 在TODO前展示其标签，表示分类，并且按标签进行排序。
+
+为此需要定义一个新的视图：
+
+```
+(setq org-agenda-hide-tags-regexp ".+")  ;; 隐藏默认的标签显示
+;; GTD视图，显示本日日程和所有的TODO项目
+(setq org-agenda-custom-commands
+      '(("t" "Today's schedule and TODOs (without habits)"
+         ((agenda "" ((org-agenda-span 'day)  ;; 仅显示当天
+                      (org-agenda-start-day "+0")  ;; 从今天开始
+                      (org-deadline-warning-days 0)))  ;; 不显示即将到期的项目
+          (todo "TODO"
+                ((org-agenda-overriding-header "Next")
+                 (org-agenda-prefix-format "%-12:T")  ;; 将标签显示在前面
+                 (org-agenda-skip-function
+                  '(org-agenda-skip-entry-if 'regexp "habit"))  ;; 排除习惯
+                 (org-agenda-sorting-strategy '(tag-down))))  ;; 按标签排序
+          ))))
+
+```
