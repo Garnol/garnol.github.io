@@ -23,11 +23,11 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="WSL2 Ubuntu环境下安装doomemacs笔记">
 <meta property="og:url" content="https://garnol.github.io/2024/08/19/wsl-install-doomemacs/index.html">
-<meta property="og:site_name" content="隆泽里安观星台镜像">
+<meta property="og:site_name" content="致智慧与苦难">
 <meta property="og:description" content="基本目标是在Windows 11上安装doomemacs，同时令其有较好的中文支持以便于日常写作。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-08-19T07:56:00.000Z">
-<meta property="article:modified_time" content="2024-08-27T07:08:32.621Z">
+<meta property="article:modified_time" content="2024-09-02T14:30:12.153Z">
 <meta property="article:author" content="Garnol">
 <meta property="article:tag" content="Emacs">
 <meta name="twitter:card" content="summary">
@@ -40,7 +40,7 @@
 <script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://garnol.github.io/2024/08/19/wsl-install-doomemacs/","path":"2024/08/19/wsl-install-doomemacs/","title":"WSL2 Ubuntu环境下安装doomemacs笔记"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>WSL2 Ubuntu环境下安装doomemacs笔记 | 隆泽里安观星台镜像</title>
+<title>WSL2 Ubuntu环境下安装doomemacs笔记 | 致智慧与苦难</title>
   
 
 
@@ -73,7 +73,7 @@
 
     <a href="/" class="brand" rel="start">
       <i class="logo-line"></i>
-      <p class="site-title">隆泽里安观星台镜像</p>
+      <p class="site-title">致智慧与苦难</p>
       <i class="logo-line"></i>
     </a>
   </div>
@@ -87,7 +87,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section">首页</a></li><li class="menu-item menu-item-品鉴"><a href="/taste" rel="section">品鉴</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section">首页</a></li>
   </ul>
 </nav>
 
@@ -112,7 +112,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E8%BE%83%E6%96%B0%E7%89%88%E6%9C%AC%E7%9A%84Emacs"><span class="nav-number">1.</span> <span class="nav-text">安装较新版本的Emacs</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#git%E7%9A%84%E8%AF%81%E4%B9%A6%E9%97%AE%E9%A2%98"><span class="nav-number">2.</span> <span class="nav-text">git的证书问题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#GUI%E5%8D%A1%E9%A1%BF%E9%97%AE%E9%A2%98"><span class="nav-number">3.</span> <span class="nav-text">GUI卡顿问题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%AD%E6%96%87%E6%98%BE%E7%A4%BA%E9%97%AE%E9%A2%98"><span class="nav-number">4.</span> <span class="nav-text">中文显示问题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%89%AA%E5%88%87%E6%9D%BF%E4%BA%92%E9%80%9A%E9%97%AE%E9%A2%98"><span class="nav-number">5.</span> <span class="nav-text">剪切板互通问题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%AD%E6%96%87%E8%BE%93%E5%85%A5%E9%97%AE%E9%A2%98"><span class="nav-number">6.</span> <span class="nav-text">中文输入问题</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%9B%B4%E6%96%B0Ubuntu%E5%88%B0%E6%9C%80%E6%96%B0%E7%9A%84LTS%E7%89%88%E6%9C%AC"><span class="nav-number">1.</span> <span class="nav-text">更新Ubuntu到最新的LTS版本</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E8%BE%83%E6%96%B0%E7%89%88%E6%9C%AC%E7%9A%84Emacs"><span class="nav-number">2.</span> <span class="nav-text">安装较新版本的Emacs</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#git%E7%9A%84%E8%AF%81%E4%B9%A6%E9%97%AE%E9%A2%98"><span class="nav-number">3.</span> <span class="nav-text">git的证书问题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#GUI%E5%8D%A1%E9%A1%BF%E9%97%AE%E9%A2%98"><span class="nav-number">4.</span> <span class="nav-text">GUI卡顿问题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%AD%E6%96%87%E6%98%BE%E7%A4%BA%E9%97%AE%E9%A2%98"><span class="nav-number">5.</span> <span class="nav-text">中文显示问题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%89%AA%E5%88%87%E6%9D%BF%E4%BA%92%E9%80%9A%E9%97%AE%E9%A2%98"><span class="nav-number">6.</span> <span class="nav-text">剪切板互通问题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%AD%E6%96%87%E8%BE%93%E5%85%A5%E9%97%AE%E9%A2%98"><span class="nav-number">7.</span> <span class="nav-text">中文输入问题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E9%85%8D%E7%BD%AE"><span class="nav-number">7.1.</span> <span class="nav-text">基本配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E6%9B%B4%E5%A5%BD%E7%9A%84%E8%BE%93%E5%85%A5%E6%B3%95"><span class="nav-number">7.2.</span> <span class="nav-text">安装更好的输入法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85"><span class="nav-number">7.2.1.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#wsl%E4%B8%8A%E7%9A%84%E9%85%8D%E7%BD%AE"><span class="nav-number">7.2.2.</span> <span class="nav-text">wsl上的配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AF%8D%E5%BA%93%E5%90%8C%E6%AD%A5"><span class="nav-number">7.2.3.</span> <span class="nav-text">词库同步</span></a></li></ol></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -125,7 +125,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">3</span>
+          <span class="site-state-item-count">4</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -136,7 +136,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-count">4</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -176,12 +176,12 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="隆泽里安观星台镜像">
+      <meta itemprop="name" content="致智慧与苦难">
       <meta itemprop="description" content="">
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="WSL2 Ubuntu环境下安装doomemacs笔记 | 隆泽里安观星台镜像">
+      <meta itemprop="name" content="WSL2 Ubuntu环境下安装doomemacs笔记 | 致智慧与苦难">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
@@ -204,7 +204,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2024-08-27 15:08:32" itemprop="dateModified" datetime="2024-08-27T15:08:32+08:00">2024-08-27</time>
+      <time title="修改时间：2024-09-02 22:30:12" itemprop="dateModified" datetime="2024-09-02T22:30:12+08:00">2024-09-02</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -256,7 +256,9 @@
 <p>考虑到与Windows的集成、Emacs的性能与后续管理更新的便捷，最后选择了在wsl2上的Ubuntu 22安装doomemacs。</p>
 <p>参阅doomemacs的<a target="_blank" rel="noopener" href="https://github.com/doomemacs/doomemacs/blob/master/docs/getting_started.org">安装教程</a>与安装过程中的提示信息就可以解决一些问题。基本使用、插件管理等方面可以参考<a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=37H7bD-G7nE">DT的视频</a>。</p>
 <p>下面是遇到的一些场外问题。</p>
-<h1 id="安装较新版本的Emacs"><a href="#安装较新版本的Emacs" class="headerlink" title="安装较新版本的Emacs"></a>安装较新版本的Emacs</h1><p>Ubuntu官方源不提供较新版本(28.x, 29.x)的Emacs，需要另寻他路。</p>
+<h1 id="更新Ubuntu到最新的LTS版本"><a href="#更新Ubuntu到最新的LTS版本" class="headerlink" title="更新Ubuntu到最新的LTS版本"></a>更新Ubuntu到最新的LTS版本</h1><p>最新的Ubuntu LTS（本文写作时是24）软件仓库中的软件和库版本更高，可以解决不少问题。</p>
+<h1 id="安装较新版本的Emacs"><a href="#安装较新版本的Emacs" class="headerlink" title="安装较新版本的Emacs"></a>安装较新版本的Emacs</h1><p><strong>参考上一条，最新的Ubuntu LTS的软件仓库提供了Emacs 29，以下内容可以忽略了</strong></p>
+<p>Ubuntu官方源不提供较新版本(28.x, 29.x)的Emacs，需要另寻他路。</p>
 <p><del>最简单的方法是用snap：</del></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">snap install emacs --classic</span><br></pre></td></tr></table></figure>
 
@@ -276,7 +278,7 @@
 </blockquote>
 <h1 id="GUI卡顿问题"><a href="#GUI卡顿问题" class="headerlink" title="GUI卡顿问题"></a>GUI卡顿问题</h1><p>使用GUI运行时，发现有十分明显的卡顿情况。缓解方法可以参考Github上的<a target="_blank" rel="noopener" href="https://github.com/doomemacs/doomemacs/issues/2217">这个Issue</a>：</p>
 <ol>
-<li>使用<code>(setq display-line-numbers-type nil)</code>移除行号，但行号还是比较重要的，这条pass。</li>
+<li><del>使用<code>(setq display-line-numbers-type nil)</code>移除行号</del>，但行号还是比较重要的，这条pass。</li>
 <li>将<code>init.el</code>中的<code>modeline</code>换为轻量的<code>(modeline +light)</code></li>
 <li>使用更适合emacs的字体。doomemacs官方推荐Fira Code。<code>config.el</code>中提供了字体配置模板。记得先安装字体。</li>
 </ol>
@@ -297,7 +299,7 @@
 </ol>
 <p>由于我个人想用GUI，因此需要在2和3之间挑一个。考虑到3很麻烦，而且wsl的支撑程度与美观上都存疑，还是用2吧。</p>
 <p>doomemacs官方提供的chinese模块没有维护且安装较麻烦，因此选择安装<code>emacs-rime</code>配合<code>posframe</code>实现中文输入。可以直接参考<code>emacs-rime</code>的<a target="_blank" rel="noopener" href="https://github.com/DogLooksGood/emacs-rime?tab=readme-ov-file">文档</a></p>
-<p>需要注意的是，rime需要能打开功能选单来实现简繁切换、输入法切换等实用功能。但功能选单默认的快捷键<code>C-` </code>已经被<code>doomemacs</code>的<code>popup</code>模块占用了，需要换个快捷键。例如：</p>
+<h2 id="基本配置"><a href="#基本配置" class="headerlink" title="基本配置"></a>基本配置</h2><p>需要注意的是，rime需要能打开功能选单来实现简繁切换、输入法切换等实用功能。但功能选单默认的快捷键<code>C-` </code>已经被<code>doomemacs</code>的<code>popup</code>模块占用了，需要换个快捷键。例如：</p>
 <p>在rime的配置文件<code>default.custom.yaml</code>中加入：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">patch:</span><br><span class="line">  schema_list:</span><br><span class="line">    - schema: luna_pinyin</span><br><span class="line">    - schema: pinyin_simp</span><br><span class="line">    - schema: terra_pinyin</span><br><span class="line">  menu/page_size: 7 # 每页显示7个候选字词。</span><br><span class="line">  switcher:</span><br><span class="line">    hotkeys:</span><br><span class="line">      - Control+apostrophe # 更换为C-&#x27;</span><br></pre></td></tr></table></figure>
 
@@ -305,6 +307,16 @@
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">;; 在默认值的基础上加入了C-&#x27;</span><br><span class="line">(setq rime-translate-keybindings</span><br><span class="line">  &#x27;(&quot;C-f&quot; &quot;C-b&quot; &quot;C-n&quot; &quot;C-p&quot; &quot;C-g&quot; &quot;C-&#x27;&quot; &quot;&lt;left&gt;&quot; &quot;&lt;right&gt;&quot; &quot;&lt;up&gt;&quot; &quot;&lt;down&gt;&quot; &quot;&lt;prior&gt;&quot; &quot;&lt;next&gt;&quot; &quot;&lt;delete&gt;&quot;))</span><br></pre></td></tr></table></figure>
 
 <p>然后重新部署rime并重新启动emacs，即可在输入法输入时使用<code>C-&#39;</code>打开功能选单了。</p>
+<h2 id="安装更好的输入法"><a href="#安装更好的输入法" class="headerlink" title="安装更好的输入法"></a>安装更好的输入法</h2><p><strong>本节默认了在Windows和Emacs中同时使用rime，因此更多地考虑了两者如何互通。如果只在Emacs中使用rime的话，可以忽略掉Windows&#x2F;小狼毫相关的内容。</strong></p>
+<p>rime默认提供的输入法较为简陋，可以安装配置和词库更好，且开箱即用的<a target="_blank" rel="noopener" href="https://github.com/iDvel/rime-ice">雾凇</a>或其衍生的<a target="_blank" rel="noopener" href="https://github.com/gaboolic/rime-frost">白霜</a>。</p>
+<p>rime的配置分为<a target="_blank" rel="noopener" href="https://github.com/rime/home/wiki/Configuration#%E4%BD%8D%E7%BD%AE%E5%8F%8A%E7%B5%84%E7%B9%94%E6%96%B9%E5%BC%8F">共享文件夹和用户文件夹</a>，大致就是全局配置和本地配置。考虑到wsl与Windows在文件系统上的集成，可以将上述输入法放在Windows的全局配置路径下，然后基于此在wsl&#x2F;Emacs和Windows上分别再定制配置。</p>
+<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p>Windows上，小狼毫的共享文件夹是<code>小狼毫安装目录\data</code>。上述两个输入法任选其一将其放进去即可。</p>
+<h3 id="wsl上的配置"><a href="#wsl上的配置" class="headerlink" title="wsl上的配置"></a>wsl上的配置</h3><p>首先确保<code>emacs-rime</code>的依赖<code>librime-dev</code>版本足够高（1.8.5以上），且安装了lua插件<code>librime-plugin-lua</code>。这是因为雾凇<a target="_blank" rel="noopener" href="https://github.com/iDvel/rime-ice/issues/840#user-content-fnref-1-367eb9c824fd743cc94da8bf428b4107">需要lua脚本实现功能</a>。</p>
+<p>然后，参考<a target="_blank" rel="noopener" href="https://github.com/DogLooksGood/emacs-rime/tree/master?tab=readme-ov-file#%E6%8C%87%E5%AE%9A-rime-%E5%85%B1%E4%BA%AB%E7%9B%AE%E5%BD%95%E5%92%8C%E7%94%A8%E6%88%B7%E7%9B%AE%E5%BD%95">官方文档</a>，将<code>emacs-rime</code>使用的共享目录设置为Windows小狼毫的共享文件夹。当然，也可以选择在默认的共享文件夹再安装一份输入法。</p>
+<p>最后，在用户文件夹添加自定义的配置，应参考<a target="_blank" rel="noopener" href="https://github.com/rime/home/wiki/CustomizationGuide">官方文档</a>。例如，可以在<code>default.custom.yaml</code>中添加：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">patch:</span><br><span class="line">  schema_list:</span><br><span class="line">    - &#123;schema: melt_eng&#125;</span><br><span class="line">    - &#123;schema: rime_ice&#125;</span><br><span class="line">  menu/page_size: 7</span><br></pre></td></tr></table></figure>
+
+<h3 id="词库同步"><a href="#词库同步" class="headerlink" title="词库同步"></a>词库同步</h3><p>参考官方文档的<a target="_blank" rel="noopener" href="https://github.com/rime/home/wiki/UserGuide#%E5%90%8C%E6%AD%A5%E7%94%A8%E6%88%B6%E8%B3%87%E6%96%99">这一节</a>，可以让<code>emacs-rime</code>和小狼毫使用同一同步路径，以方便地在两者之间同步词库。</p>
 
     </div>
 
@@ -326,6 +338,9 @@
                 </a>
             </div>
             <div class="post-nav-item">
+                <a href="/2024/09/01/org-mode-intro-note/" rel="next" title="Org-Mode与GTD个人入门学习笔记">
+                  Org-Mode与GTD个人入门学习笔记 <i class="fa fa-angle-right"></i>
+                </a>
             </div>
           </div>
     </footer>
@@ -345,7 +360,7 @@
 
   <div class="copyright">
     &copy; 
-    <span itemprop="copyrightYear">2024</span>
+    <span itemprop="copyrightYear">2025</span>
     <span class="with-love">
       <i class="fa fa-heart"></i>
     </span>
